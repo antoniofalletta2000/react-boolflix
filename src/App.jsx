@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import "flag-icons/css/flag-icons.min.css"
 
 function App() {
   const [films, setFilms] = useState([])
+  const [series, setSeries]=useState([])
   const [typeTitle, setTypeTitle] = useState("")
   console.log(typeTitle);
 
@@ -9,13 +11,22 @@ function App() {
     e.preventDefault()
     const API_KEY = import.meta.env.VITE_API_KEY
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${typeTitle}`
+    const url_tv = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=it_IT&query=${typeTitle}`
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data.results);
         setFilms(data.results)
-      })
+        setTypeTitle("")
+      });
+      fetch(url_tv)
+      .then(res => res.json())
+      .then(data => {
+        setSeries(data.results)
+        setTypeTitle("")
+      });
   }
+
+ 
 
   return (
     <>
@@ -30,8 +41,18 @@ function App() {
             <li key={film.id}>
               <div>{film.title}</div>
               <div>{film.original_title}</div>
-              <div>{film.original_language}</div>
+              <div className={`fi fi-${film.original_language === "en" ? "gb" : film.original_language === "ja" ? "jp" : film.original_language}`}></div>
               <div>{film.vote_average}</div>
+            </li>
+          ))
+        }
+        {
+          series.map(serie => (
+            <li key={serie.id}>
+              <div>{serie.name}</div>
+              <div>{serie.original_name}</div>
+              <div className={`fi fi-${serie.original_language === "en" ? "gb" : serie.original_language === "ja" ? "jp" : serie.original_language}`}></div>
+              <div>{serie.vote_average}</div>
             </li>
           ))
         }
