@@ -1,6 +1,40 @@
 @import url('bootstrap');
 
+body{
+    background-color: rgb(85, 83, 83);
+}
+
 .bi-star-fill{
     color: rgb(244, 244, 8);
 }
 
+
+
+.card{
+    min-height: 30rem;
+    overflow: hidden;
+    overflow-y: auto;
+    
+}
+
+
+.card_poster{
+    position: relative;
+    height: 30rem;
+    object-fit: cover;
+    width: 100%;
+    
+}
+.card:hover .card_poster{
+    display: none;
+}
+
+.card_info{
+    position: absolute;
+    display: none;
+    
+}
+.card:hover .card_info{
+    display: block;
+    
+}
