@@ -39,20 +39,22 @@ function App() {
         {
           films.map(film => (
             <li key={film.id}>
+              <div><img src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`} alt="" /></div>
               <div>{film.title}</div>
               <div>{film.original_title}</div>
               <div className={`fi fi-${film.original_language === "en" ? "gb" : film.original_language === "ja" ? "jp" : film.original_language}`}></div>
-              <div>{film.vote_average}</div>
+              <div>{(film.vote_average/2).toFixed(0)}</div>
             </li>
           ))
         }
         {
           series.map(serie => (
             <li key={serie.id}>
+              <div><img src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`} alt="" /></div>
               <div>{serie.name}</div>
               <div>{serie.original_name}</div>
               <div className={`fi fi-${serie.original_language === "en" ? "gb" : serie.original_language === "ja" ? "jp" : serie.original_language}`}></div>
-              <div>{serie.vote_average}</div>
+              <div>{(serie.vote_average/2).toFixed(0)}</div>
             </li>
           ))
         }
