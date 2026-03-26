@@ -8,13 +8,13 @@ export default function AppHeader({ setFilms, setTypeTitle, setSeries, typeTitle
             .then(res => res.json())
             .then(data => {
                 setFilms(data.results)
-                setTypeTitle("")
+                
             });
         fetch(url_tv)
             .then(res => res.json())
             .then(data => {
                 setSeries(data.results)
-                setTypeTitle("")
+                
             });
     }
 
