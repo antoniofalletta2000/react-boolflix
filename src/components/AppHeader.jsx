@@ -25,11 +25,11 @@ export default function AppHeader({ setFilms, setTypeTitle, setSeries, typeTitle
                 <div className="container pt-3 pb-2 ">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex justify-content-between align-items-center">
                         <div className="col">
-                            <h2 className="text-danger">Boolflix</h2>
+                            <h2 id="boolflix" className="text-danger">BOOLFLIX</h2>
                         </div>
                         <div className="col">
                             <form onSubmit={handleSubmit} className="d-flex">
-                                <input type="text" className="border-0 rounded-start" value={typeTitle} onChange={(e) => setTypeTitle(e.target.value)} placeholder="Cosa vorresti guardare?" />
+                                <input type="text" className="border-0 rounded-start bg-light" value={typeTitle} onChange={(e) => setTypeTitle(e.target.value)} placeholder="Cosa vorresti guardare?" />
                                 <div>
                                     <button type="submit" className="p-2 border-0 bg-danger text-white rounded-end">Cerca</button>
                                 </div>

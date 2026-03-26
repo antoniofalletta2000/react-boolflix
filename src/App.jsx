@@ -18,7 +18,10 @@ function App() {
     <>
       <AppHeader setFilms={setFilms} setTypeTitle={setTypeTitle} setSeries={setSeries} typeTitle={typeTitle} />
       <div className="container">
-
+        <div className="d-flex justify-content-center mt-5">
+          {typeTitle===""&& films.length===0 && <h1 id="boolflix" className="text-danger fw-bold">La pagina è vuota, prova a cercare un Film o una Serie Tv!</h1>}
+        </div>
+        
         <ul className="list-unstyled row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex">
           {
             films.map(film => (
@@ -27,7 +30,7 @@ function App() {
                   <div className="d-flex justify-content-center">
                     <img src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`} className="card_poster" alt="" />
                   </div>
-                  <div className="card-body card_info pt-2">
+                  <div className="card-body card_info pt-5">
                     <div ><span className="fw-bold">Titolo:</span> {film.title}</div>
                     <div ><span className="fw-bold">Titolo originale:</span> {film.original_title}</div>
                     <div className="d-flex gap-2">
@@ -54,7 +57,7 @@ function App() {
                   <div className="d-flex justify-content-center">
                     <img src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`} className="card_poster" alt="" />
                   </div>
-                  <div className="card-body card_info pt-2">
+                  <div className="card-body card_info pt-5">
                     <div ><span className="fw-bold">Titolo:</span> {serie.name}</div>
                     <div ><span className="fw-bold">Titolo originale:</span> {serie.original_name}</div>
                     <div className="d-flex gap-2">
