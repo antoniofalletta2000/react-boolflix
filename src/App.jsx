@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "flag-icons/css/flag-icons.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 
 function App() {
   const [films, setFilms] = useState([])
-  const [series, setSeries]=useState([])
+  const [series, setSeries] = useState([])
   const [typeTitle, setTypeTitle] = useState("")
   console.log(typeTitle);
 
@@ -18,7 +19,7 @@ function App() {
         setFilms(data.results)
         setTypeTitle("")
       });
-      fetch(url_tv)
+    fetch(url_tv)
       .then(res => res.json())
       .then(data => {
         setSeries(data.results)
@@ -26,7 +27,7 @@ function App() {
       });
   }
 
- 
+
 
   return (
     <>
@@ -43,7 +44,69 @@ function App() {
               <div>{film.title}</div>
               <div>{film.original_title}</div>
               <div className={`fi fi-${film.original_language === "en" ? "gb" : film.original_language === "ja" ? "jp" : film.original_language}`}></div>
-              <div>{(film.vote_average/2).toFixed(0)}</div>
+              <div>{Math.ceil(film.vote_average / 2)}</div>
+              <div>
+                {
+                  Math.ceil(film.vote_average / 2) === 0 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(film.vote_average / 2) === 1 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(film.vote_average / 2) === 2 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(film.vote_average / 2) === 3 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(film.vote_average / 2) === 4 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                 {
+                  Math.ceil(film.vote_average / 2) === 5 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                  </div>
+                }
+              </div>
             </li>
           ))
         }
@@ -54,7 +117,70 @@ function App() {
               <div>{serie.name}</div>
               <div>{serie.original_name}</div>
               <div className={`fi fi-${serie.original_language === "en" ? "gb" : serie.original_language === "ja" ? "jp" : serie.original_language}`}></div>
-              <div>{(serie.vote_average/2).toFixed(0)}</div>
+              <div>{Math.ceil(serie.vote_average / 2)}</div>
+              <div>
+                {
+                  Math.ceil(serie.vote_average / 2) === 0 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(serie.vote_average / 2) === 1 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(serie.vote_average / 2) === 2 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(serie.vote_average / 2) === 3 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                {
+                  Math.ceil(serie.vote_average / 2) === 4 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star"></i>
+                  </div>
+                }
+                 {
+                  Math.ceil(serie.vote_average / 2) === 5 &&
+                  <div className="d-flex">
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                  </div>
+                }
+
+              </div>
             </li>
           ))
         }
