@@ -6,7 +6,7 @@ import SerieStar from "./SerieStar";
 export default function SeriesMap({ serie }) {
     return (
         <>
-            <li key={serie.id} className=" col pt-4">
+            <li  className=" col pt-4">
                 <div className="card bg-dark text-white">
                     <div className="d-flex justify-content-center">
                         <img src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`} className="card_poster" alt="" />
