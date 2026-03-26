@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import SeriesMap from "./components/SeriesMap";
 import AppHeader from "./components/AppHeader";
 import FilmsMap from "./components/FilmsMap";
+
 function App() {
   const [films, setFilms] = useState([])
   const [series, setSeries] = useState([])

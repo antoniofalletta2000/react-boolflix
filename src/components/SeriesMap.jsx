@@ -6,7 +6,7 @@ import SerieStar from "./SerieStar";
 export default function SeriesMap({ serie }) {
     return (
         <>
-            <li  className=" col pt-4">
+            <li className=" col pt-4">
                 <div className="card bg-dark text-white">
                     <div className="d-flex justify-content-center">
                         <img src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`} className="card_poster" alt="" />
@@ -16,7 +16,14 @@ export default function SeriesMap({ serie }) {
                         <div ><span className="fw-bold">Titolo originale:</span> {serie.original_name}</div>
                         <div className="d-flex gap-2">
                             <span className="fw-bold">Paese d'origine:</span>
-                            <div className={` fi fi-${serie.original_language === "en" ? "gb" : serie.original_language === "ja" ? "jp" : serie.original_language}`}></div>
+                            <div className={` fi fi-
+                                ${serie.original_language === "en" ? "gb" :
+                                    serie.original_language === "ja" ? "jp" :
+                                        film.original_language === "zh" ? "cn" :
+                                            film.original_language === "ko" ? "kr" :
+                                                serie.original_language}`}>
+
+                            </div>
                         </div>
 
                         <div className="d-flex gap-2">
