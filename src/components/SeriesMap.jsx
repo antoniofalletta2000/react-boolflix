@@ -19,8 +19,8 @@ export default function SeriesMap({ serie }) {
                             <div className={` fi fi-
                                 ${serie.original_language === "en" ? "gb" :
                                     serie.original_language === "ja" ? "jp" :
-                                        film.original_language === "zh" ? "cn" :
-                                            film.original_language === "ko" ? "kr" :
+                                        serie.original_language === "zh" ? "cn" :
+                                            serie.original_language === "ko" ? "kr" :
                                                 serie.original_language}`}>
 
                             </div>
