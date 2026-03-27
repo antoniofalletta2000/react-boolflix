@@ -1,7 +1,7 @@
 @import url('bootstrap');
 
 body{
-    background-color: rgb(62, 60, 60);
+    background-color: rgb(48, 46, 46);
 }
 
 #boolflix{
@@ -61,4 +61,23 @@ body{
 .card:hover .card_info{
     display: block;
     
+}
+
+.img_home{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+#card_home{
+    min-height: 18rem;
+}
+
+#current_title{
+     font-family: "Oswald", sans-serif;
+}
+
+#resultsFor{
+    font-family: "Oswald", sans-serif;
 }
