@@ -16,14 +16,8 @@ export default function SeriesMap({ serie }) {
                         <div ><span className="fw-bold">Titolo originale:</span> {serie.original_name}</div>
                         <div className="d-flex gap-2">
                             <span className="fw-bold">Paese d'origine:</span>
-                            <div className={` fi fi-
-                                ${serie.original_language === "en" ? "gb" :
-                                    serie.original_language === "ja" ? "jp" :
-                                        serie.original_language === "zh" ? "cn" :
-                                            serie.original_language === "ko" ? "kr" :
-                                                serie.original_language}`}>
-
-                            </div>
+                            <div className={` fi fi-${serie.original_language === "en" ? "gb" : serie.original_language === "ja" ? "jp" : serie.original_language === "zh" ? "cn" : serie.original_language === "ko" ? "kr" : serie.original_language}`}>
+                                        </div>
                         </div>
 
                         <div className="d-flex gap-2">

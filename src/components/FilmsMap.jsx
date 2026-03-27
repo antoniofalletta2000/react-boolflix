@@ -16,12 +16,7 @@ export default function FilmsMap({ film }) {
                         <div ><span className="fw-bold">Titolo originale:</span> {film.original_title}</div>
                         <div className="d-flex gap-2">
                             <span className="fw-bold">Paese d'origine:</span>
-                            <div className={` fi fi-
-                            ${film.original_language === "en" ? "gb" :
-                                    film.original_language === "ja" ? "jp" :
-                                        film.original_language === "zh" ? "cn" :
-                                            film.original_language === "ko" ? "kr" :
-                                                film.original_language}`}>
+                            <div className={` fi fi-${film.original_language === "en" ? "gb" : film.original_language === "ja" ? "jp" : film.original_language === "zh" ? "cn" : film.original_language === "ko" ? "kr" : film.original_language}`}>            
                             </div>
                         </div>
 

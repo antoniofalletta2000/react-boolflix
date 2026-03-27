@@ -23,9 +23,9 @@ export default function HomePage() {
         <>
             <div className="container">
                 <h2 id="current_title" className="text-danger">I titoli del momento:</h2>
-                <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 d-flex">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 d-flex">
                     {homeFilms.map(film => (
-                        <div className=" col pt-4">
+                        <div key={film.id} className=" col pt-4">
                             <div className="card bg-dark text-white">
                                 <div className="d-flex justify-content-center">
                                     <img src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} className="card_poster" alt="" />
@@ -35,12 +35,7 @@ export default function HomePage() {
                                     <div ><span className="fw-bold">Titolo originale:</span> {film.original_title}</div>
                                     <div className="d-flex gap-2">
                                         <span className="fw-bold">Paese d'origine:</span>
-                                        <div className={` fi fi-
-                                                    ${film.original_language === "en" ? "gb" :
-                                                film.original_language === "ja" ? "jp" :
-                                                    film.original_language === "zh" ? "cn" :
-                                                        film.original_language === "ko" ? "kr" :
-                                                            film.original_language}`}>
+                                        <div className={` fi fi-${film.original_language === "en" ? "gb" : film.original_language === "ja" ? "jp" : film.original_language === "zh" ? "cn" : film.original_language === "ko" ? "kr" : film.original_language}`}>
                                         </div>
                                     </div>
 
