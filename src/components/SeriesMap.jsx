@@ -9,7 +9,7 @@ export default function SeriesMap({ serie }) {
             <li className=" col pt-4">
                 <div className="card bg-dark text-white">
                     <div className="d-flex justify-content-center">
-                        <img src={`https://image.tmdb.org/t/p/w342/${serie.poster_path}`} className="card_poster" alt="" />
+                        <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} className="card_poster" alt="" />
                     </div>
                     <div className="card-body card_info pt-5">
                         <div ><span className="fw-bold">Titolo:</span> {serie.name}</div>
