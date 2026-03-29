@@ -13,9 +13,7 @@ export default function HomePage() {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data.results);
                 setHomeFilms(data.results)
-
             })
     }, [])
 
@@ -45,7 +43,7 @@ export default function HomePage() {
                                     </div>
                                     <div ><span className="fw-bold">Trama:</span> {film.overview}</div>
                                 </div>
-
+                                
                             </div>
                         </div>
                     ))}

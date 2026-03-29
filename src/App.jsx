@@ -9,8 +9,10 @@ import HomePage from "./components/HomePage";
 function App() {
   const [films, setFilms] = useState([])
   const [series, setSeries] = useState([])
+  
   const [typeTitle, setTypeTitle] = useState("")
 
+    
   return (
     <>
       <AppHeader setFilms={setFilms} setTypeTitle={setTypeTitle} setSeries={setSeries} typeTitle={typeTitle} />
@@ -22,7 +24,7 @@ function App() {
         <ul className="list-unstyled row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex">
           {
             films.map(film => (
-              <FilmsMap key={film.id} film={film}/>
+              <FilmsMap key={film.id} film={film} id={film.id} />
             ))
           }
 
