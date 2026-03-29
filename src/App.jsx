@@ -17,7 +17,7 @@ function App() {
       <AppHeader setFilms={setFilms} setTypeTitle={setTypeTitle} setSeries={setSeries} typeTitle={typeTitle} />
       <div className="container">
         <div className="d-flex justify-content-center mt-5">
-          {typeTitle===""&& films.length===0 && <HomePage/>}
+          {typeTitle===""&& films.length===0 && <HomePage />}
         </div>
         {typeTitle.length!==0 && <h2 id="resultsFor" className="text-danger">Risultati per: "{typeTitle}" </h2> }
         <ul className="list-unstyled row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 d-flex">
