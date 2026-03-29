@@ -5,15 +5,15 @@ import { useState } from "react";
 
 
 export default function FilmsMap({ film , id}) {
-    const [actors, setActors] = useState([])
+    const [FilmActors, setFilmActors] = useState([])
 
     const API_KEY = import.meta.env.VITE_API_KEY
 
-    const Cast= async () =>{
+    const castFilm= async () =>{
         fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`)
             .then(res=> res.json())
             .then(data=>{
-                setActors(data.cast)
+                setFilmActors(data.cast)
             })
     }
             
@@ -24,7 +24,7 @@ export default function FilmsMap({ film , id}) {
     
     return (
         <>
-            <li className=" col pt-4" onMouseEnter={Cast}>
+            <li className=" col pt-4" onMouseEnter={castFilm}>
                 <div className="card bg-dark text-white">
                     <div className="d-flex justify-content-center">
                         <img src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} className="card_poster" alt="" />
@@ -45,8 +45,8 @@ export default function FilmsMap({ film , id}) {
                         <div ><span className="fw-bold">Trama:</span> {film.overview}</div>
                         <span className="fw-bold">Cast:</span>
                         {
-                            actors.map(act=>
-                                <div key={act.id}>{act.name}</div>
+                            FilmActors.map(actor=>
+                                <div key={actor.id}>{actor.name}</div>
                             ).slice(0,5)
                         }
                     </div>

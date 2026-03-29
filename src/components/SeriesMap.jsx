@@ -1,12 +1,24 @@
 import "flag-icons/css/flag-icons.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import SerieStar from "./SerieStar";
+import { useState } from "react";
 
 
-export default function SeriesMap({ serie }) {
+export default function SeriesMap({ serie,id }) {
+    const [SerieActors, setSerieActors] = useState([])
+
+     const API_KEY = import.meta.env.VITE_API_KEY
+
+    const castSerie= async () =>{
+        fetch(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=${API_KEY}`)
+            .then(res=> res.json())
+            .then(data=>{
+                setSerieActors(data.cast)
+            })
+    }
     return (
         <>
-            <li className=" col pt-4">
+            <li className=" col pt-4" onMouseEnter={castSerie}>
                 <div className="card bg-dark text-white">
                     <div className="d-flex justify-content-center">
                         <img src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} className="card_poster" alt="" />
@@ -25,6 +37,12 @@ export default function SeriesMap({ serie }) {
                             <SerieStar serie={serie} />
                         </div>
                         <div ><span className="fw-bold">Trama:</span> {serie.overview}</div>
+                        <span className="fw-bold">Cast:</span>
+                        {
+                            SerieActors.map(actor=>
+                                <div key={actor.id}>{actor.name}</div>
+                            ).slice(0,5)
+                        }
                     </div>
 
                 </div>

@@ -9,7 +9,6 @@ import HomePage from "./components/HomePage";
 function App() {
   const [films, setFilms] = useState([])
   const [series, setSeries] = useState([])
-  
   const [typeTitle, setTypeTitle] = useState("")
 
     
@@ -30,7 +29,7 @@ function App() {
 
           {
             series.map(serie => (
-              <SeriesMap key={serie.id} serie={serie}/>
+              <SeriesMap key={serie.id} serie={serie} id={serie.id}/>
             ))
           }
         </ul >
