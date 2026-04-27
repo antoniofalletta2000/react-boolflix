@@ -1,7 +1,7 @@
 
 const API_KEY = import.meta.env.VITE_API_KEY
 
-export default function AppHeader({ setFilms, setTypeTitle, setSeries, typeTitle, actors, setActors, id }) {
+export default function AppHeader({ setFilms, setTypeTitle, setSeries, typeTitle }) {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${typeTitle}`
     const url_tv = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=it_IT&query=${typeTitle}`
     
